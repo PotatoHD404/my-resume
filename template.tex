@@ -189,11 +189,11 @@
 \section{Навыки}
   \resumeHeadingListStart{}
     \resumeSectionType{Языки}{:}{Python, TypeScript, \Csh{}, SQL, Bash}
-    \resumeSectionType{Фреймворки}{:}{React.js, ASP.NET, Django}
+    \resumeSectionType{Фреймворки}{:}{React.js, Next.js, ASP.NET, Django}
     \resumeSectionType{Библиотеки}{:}{Redux, React Router}
     \resumeSectionType{Базы данных}{:}{PostgreSQL, Firebase, DynamoDB}
     \resumeSectionType{Инструменты}{:}{Git, GitHub, Terraform, Docker}
-    \resumeSectionType{Облака}{:}{Yandex Cloud, AWS}
+    \resumeSectionType{Облака}{:}{Yandex Cloud, AWS, Vercel}
   \resumeHeadingListEnd{}
 %--------------------------------------------
 
@@ -248,7 +248,11 @@
         \resumeItem{Полностью развернут в Yandex cloud при помощи terraform и yandex cloud functions (serverless)}
         \resumeItem{В проекте настроен Github Actions для непрерывной разработки и тестирования}
         \resumeItem{Для тестирования в проекте используются Jest (для интеграционных и unit-тестов) и Storybook (для тестов компонентов)}
-        \resumeItem{Основной сложностью было написать парсер SQL и последующую обработку запроса}
+        \resumeItem{В ходе проекта был также разработан способ загрузки файлов в notion для замены облачного хранилища}
+        \resumeItem{Кроме того был разработан ORM для YDB на Node.js}
+        \resumeItem{Была создана система рендеринга React компонентов в PNG}
+        \resumeItem{Был создан прототип библиотеки для представления бекенда на next.js в виде, похожем на Spring (в виде классов), а также dependency injection для этой библиотеки}
+        \resumeItem{Главным вызовом в проекте было развертывание в облаке, так как не существовало технологии развертывания next.js в yandex cloud}
       \resumeItemListEnd{}
 
       \resumeTrioHeading{\href{https://paralleldb.vercel.app/}{\uline{ParallelDB}}}{\Csh{}, ASP.Net, AWS Lambda, Vue3, Typescript}{\href{https://github.com/PotatoHD404/ParallelDB}{\uline{Source Code}}}
@@ -259,12 +263,12 @@
         \resumeItem{Фронтенд на Vue3 для отправки запросов к БД и последующего отображения}
         \resumeItem{Наибольшую сложность представлял парсер SQL и последующую обработку запроса}
       \resumeItemListEnd{}
-    \resumeTrioHeading{\href{https://t.me/potatohd_checker_bot}{\uline{Website-checker}}}{Telegram, Golang, AWS lambda, dynamodb}{\href{https://github.com/PotatoHD404/website-checker-bot}{\uline{Source Code}}}
+    \resumeTrioHeading{\href{https://t.me/potatohd_checker_bot}{\uline{website-checker}}}{Telegram, Golang, AWS lambda, dynamodb}{\href{https://github.com/PotatoHD404/website-checker-bot}{\uline{Source Code}}}
       \resumeItemListStart{}
         \resumeItem{Телеграм бот для проверки изменений сайта, написанный на golang}
-        \resumeItem{Каждые 5 минут происходит проверка изменений всех сайтов из базы данных dynamodb}
+        \resumeItem{Каждые 5 минут происходит проверка изменений всех сайтов из базы данных DynamoDB}
         \resumeItem{Можно подписаться на изменения любого сайта, но только админ может добавить новый}
-        \resumeItem{Основной сложностью было настроить terraform, GitHub actions и aws sdk}
+        \resumeItem{Основной сложностью было настроить terraform, GitHub actions и AWS SDK}
       \resumeItemListEnd{}
   \resumeHeadingListEnd{}
 %--------------------------------------------
