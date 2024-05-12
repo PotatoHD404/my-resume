@@ -209,19 +209,26 @@
   \resumeQuadHeading{\underline{Разработчик}}{\underline{Декабрь 2023 -- наст. время}}
   {Tinkoff}{}
     \resumeItemListStart{}
-      \resumeItem{Разрабатывал бекенд платформы голосовых роботов с использованием Python, SQLalchemy, Kafka, PostgreSQL, Redis, Golang.  }
-    \resumeItem{Занимался улучшением стабильности работы платформы путем написания тестов и ускорения существующего функционала.}
-    \resumeItem{Ускорил в 2 раза работу тестов.}
+      \resumeItem{Разрабатывал бекенд платформы голосовых роботов с использованием Python, SQLalchemy, Kafka, PostgreSQL, Redis, Golang.}
+      \resumeItem{Занимался улучшением стабильности работы платформы путем написания тестов и ускорения существующего функционала.}
+      \resumeItem{Ускорил в 2 раза работу тестов.}
+      \resumeItem{Учавствовал в разработке фичи, уменьшившей количество запросов на 10\%.}
     \resumeItemListEnd{}
   \resumeQuadHeading{\underline{Разработчик}}{\underline{Октябрь 2023 -- Декабрь 2023}}
   {Crypton}{}
     \resumeItemListStart{}
       \resumeItem{Разработал API для платформы онлайн курсов. Были использованы Django, Celery, Redis, RabbitMQ.}
+      \resumeItem{Разработал контракт, согласно требованиям и начал его реализацию.}
     \resumeItemListEnd{}
   \resumeQuadHeading{\underline{Стажёр-разработчик}}{\underline{Июнь 2023 -- Октябрь 2023}}
   {Tinkoff}{}
     \resumeItemListStart{}
-      \resumeItem{Разработал систему обработки данных с использованием Kafka, Flink, Python, Clickhouse, FastAPI. В результате стажировки был полностью написан и запущен в работу сервис, способный обрабатывать 100 тысяч логов в секунду.}
+      \resumeItem{Разработал систему обработки данных с использованием Kafka, Flink, Python, Clickhouse, FastAPI.}
+      \resumeItem{Разработал контракт, для взаимодействия API и frontend.}
+      \resumeItem{Разработал модели для базы данных}
+      \resumeItem{Разработал сервис на Flink, который вычитывал данные из Kafka, аггрегировал их и писал в Clickhouse.}
+      \resumeItem{Учавствовал в разработке frontend части на Angular, что позволило значительно уменьшить время разработки.}
+      \resumeItem{В результате стажировки был полностью написан и запущен в работу сервис, способный обрабатывать 100 тысяч логов в секунду.}
     \resumeItemListEnd{}
 %   \resumeQuadHeading{Backend Developer}{Aug 2021 -- Nov 2022}
 %   {Anycompany}{Anycity, Anystate, Anycountry}
@@ -243,6 +250,8 @@
 
 \section{Образование}
   \resumeHeadingListStart{}
+    % \resumeQuadHeading{Центральный Университет (Tinkoff)}{Магистратура}
+    % {Аналитика}{Сентябрь 2024 -- Июль 2026}
     \resumeQuadHeading{Национальный Исследовательский Ядерный Университет "МИФИ"}{Бакалавариат}
     {Программная инженерия}{Сентябрь 2020 -- Июль 2024}
   \resumeHeadingListEnd{}
@@ -261,15 +270,25 @@
 %         \resumeItem{Основными сложностями были описание разветвленной логики бота и написание сложных оптимизированных SQL запросов}
 %         \resumeItemListEnd{}
 \section{Пет-проекты}
-      \resumeTrioHeading{\href{https://paralleldb.vercel.app/}{\uline{ParallelDB}}}{\Csh{}, ASP.Net, AWS Lambda, Vue3, TypeScript}{\href{https://github.com/PotatoHD404/ParallelDB}{\uline{Исходный код}}}
+      \resumeTrioHeading{Schedule bot}{Golang, PostgreSQL, Gin, GORM, Yandex Cloud, SQS}{\href{https://github.com/PotatoHD404/ParallelDB}{\uline{Исходный код}}}
       \resumeItemListStart{}
-        \resumeItem{Простая база данных на \Csh{}, позволяющая обрабатывать запросы параллельно}
-        \resumeItem{Реализовал парсер для SQL, DSL для программного использования}
-        \resumeItem{API на ASP.net для взаимодействия с фронтендом, захосченое на AWS lambda}
-        \resumeItem{Фронтенд на Vue3 для отправки запросов к БД и последующего отображения}
-        \resumeItem{Наибольшую сложность представлял парсер SQL и последующую обработку запроса}
-      \resumeItemListEnd{}
+        \resumeItem{Телеграм бот для поиска свободных кабинетов в НИЯУ МИФИ}
+        \resumeItem{Разработал архитектуру системы, включая контракты взаимодействия всех компонентов системы и модели базы данных}
+        \resumeItem{Разработал парсер для сбора данных с портала \href{https://home.mephi.ru}{home.mephi}}
+        \resumeItem{Развернул проект на Yandex Cloud с использованием SQS и Cloud Functions}
+        \resumeItem{Основной трудностью было предотвратить резкую нагрузку на сайт при сборе данных}
   \resumeHeadingListEnd{}
+
+  % \section{Пет-проекты}
+  %     \resumeTrioHeading{\href{https://paralleldb.vercel.app/}{\uline{ParallelDB}}}{\Csh{}, ASP.Net, AWS Lambda, Vue3, TypeScript}{\href{https://github.com/PotatoHD404/ParallelDB}{\uline{Исходный код}}}
+  %     \resumeItemListStart{}
+  %       \resumeItem{Простая база данных на \Csh{}, позволяющая обрабатывать запросы параллельно}
+  %       \resumeItem{Реализовал парсер для SQL, DSL для программного использования}
+  %       \resumeItem{API на ASP.net для взаимодействия с фронтендом, захосченое на AWS lambda}
+  %       \resumeItem{Фронтенд на Vue3 для отправки запросов к БД и последующего отображения}
+  %       \resumeItem{Наибольшую сложность представлял парсер SQL и последующую обработку запроса}
+  %     \resumeItemListEnd{}
+  % \resumeHeadingListEnd{}
 %--------------------------------------------
 
 
