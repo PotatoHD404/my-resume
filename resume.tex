@@ -37,8 +37,7 @@
 \usepackage[english, russian]{babel} % provides culturally determined typographical rules for wide range of languages
 %-----------------------------------------
 
-\input glyphtounicode % converts glyph names to unicode
-\pdfgentounicode=1 % ensures pdfs generated are ats readable
+% \input glyphtounicode % converts glyph names to unicode
 
 %----------FONT OPTIONS-------------------
 \usepackage[default]{sourcesanspro} % uses the font source sans pro
@@ -230,6 +229,7 @@
       \resumeItem{Учавствовал в разработке frontend части на Angular, что позволило значительно уменьшить время разработки.}
       \resumeItem{В результате стажировки был полностью написан и запущен в работу сервис, способный обрабатывать 100 тысяч логов в секунду.}
     \resumeItemListEnd{}
+\resumeHeadingListEnd{}
 %   \resumeQuadHeading{Backend Developer}{Aug 2021 -- Nov 2022}
 %   {Anycompany}{Anycity, Anystate, Anycountry}
 %     \resumeItemListStart{}
@@ -270,6 +270,7 @@
 %         \resumeItem{Основными сложностями были описание разветвленной логики бота и написание сложных оптимизированных SQL запросов}
 %         \resumeItemListEnd{}
 \section{Пет-проекты}
+\resumeHeadingListStart{}
       \resumeTrioHeading{Schedule bot}{Golang, PostgreSQL, Gin, GORM, Yandex Cloud, SQS}{\href{https://github.com/PotatoHD404/ParallelDB}{\uline{Исходный код}}}
       \resumeItemListStart{}
         \resumeItem{Телеграм бот для поиска свободных кабинетов в НИЯУ МИФИ}
@@ -277,6 +278,7 @@
         \resumeItem{Разработал парсер для сбора данных с портала \href{https://home.mephi.ru}{home.mephi}}
         \resumeItem{Развернул проект на Yandex Cloud с использованием SQS и Cloud Functions}
   \resumeHeadingListEnd{}
+\resumeHeadingListEnd{}
 
   % \section{Пет-проекты}
   %     \resumeTrioHeading{\href{https://paralleldb.vercel.app/}{\uline{ParallelDB}}}{\Csh{}, ASP.Net, AWS Lambda, Vue3, TypeScript}{\href{https://github.com/PotatoHD404/ParallelDB}{\uline{Исходный код}}}

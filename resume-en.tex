@@ -1,0 +1,244 @@
+%-------------------------
+% Rezume, a latex resume template for developers
+% Author : Nanu Panchamurthy
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+
+% Hope this resume template helps you land an awesome job. If you found this helpful, please consider starring the github repo here, .
+%-------------------------
+
+
+
+%------------PACKAGES----------------
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{verbatim} % reimplements the "verbatim" and "verbatim*" environments
+
+\usepackage{titlesec} % provides an interface to sectioning commands i.e. custom elements
+
+\usepackage{color} % provides both foreground and background color management
+
+\usepackage{enumitem} % provides control over enumerate, itemize and description
+
+\usepackage{fancyhdr} % provides extensive facilities for constructing headers, footers and also controlling their use
+
+\usepackage{tabularx} % defines an environment tabularx, extension of "tabular" with an extra designator x, paragraph like column whose width automatically expands to fill the width of the environment
+
+\usepackage{latexsym} % provides mathematical symbols
+
+\usepackage{marvosym} % provides martin vogel's symbol font which contains various symbols
+
+\usepackage[empty]{fullpage} % sets margins to one inch and removes headers, footers etc..
+
+\usepackage[hidelinks]{hyperref} % removes color and shadow of hyperlinks
+
+\usepackage[normalem]{ulem} % provides "\ul" (uline) command which will break at line breaks
+
+\usepackage[english]{babel} % provides culturally determined typographical rules for wide range of languages
+%-----------------------------------------
+
+%----------FONT OPTIONS-------------------
+\usepackage[default]{sourcesanspro} % uses the font source sans pro
+\urlstyle{same} % changes url font from default urlfont to font being used by the document
+%-----------------------------------------
+
+
+%----------MARGIN OPTIONS-----------------
+\pagestyle{fancy} % set page style to one configured by fancyhdr
+\fancyhf{} % clear all header and footer fields
+
+\renewcommand{\headrulewidth}{0in} % sets thickness of linerule under header to zero
+\renewcommand{\footrulewidth}{0in} % sets thickness of linerule over footer to zero
+
+\newcommand{\Csh}{C{\lserif\#}}
+
+\setlength{\tabcolsep}{0in} % sets thickness of column separator in tables to zero
+
+% origin of the document is one inch from the top and from and the left
+% oddsidemargin and evensidemargin both refer to the left margin
+% right margin is indirectly set using oddsidemargin
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\topmargin}{-0.5in}
+
+\addtolength{\textwidth}{1.0in} % sets width of text area in the page to one inch
+\addtolength{\textheight}{1.0in} % sets height of text area in the page to one inch
+
+\raggedbottom{} % makes all pages the height of current page, no extra vertical space added
+\raggedright{} % makes all pages the width of current page, no extra horizontal space added
+%------------------------------------------
+
+
+%--------SECTIONING COMMANDS---------
+% \titleformat{<command>}
+%   [<shape>]{<format>}{<label>}{<sep>}
+%     {<before-code>}[<after-code>]
+
+% command is the sectioning command to be redefined
+% shape is the style of the font; scshape stands for small caps style
+% format is the format to be applied to whole title- label and text; absent here
+% label defines the label
+% sep is the horizontal separation between label and title body
+% before-code is the code to be executed before
+% after-code is the code to be executed after
+
+\titleformat{\section}
+  {\scshape\large}{}
+    {0em}{\color{blue}}[\color{black}\titlerule\vspace{0pt}]
+%-------------------------------------
+
+
+%--------REDEFINITIONS----------------
+% redefines the style of the bullet point
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% redefines the underline depth to 2pt
+\renewcommand{\ULdepth}{2pt}
+%-------------------------------------
+
+
+%--------CUSTOM COMMANDS--------------
+%\vspace{} defines a vertical space of given size, modifying this in custom commands can help stretch or shrink resume to remove or add content
+
+% resumeItem renders a bullet point
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+% commands to start and end itemization of resumeItem, rightmargin set to 0.11in to avoid the overflow of resumetItem beyond whatever resumeItemHeading is being used
+\newcommand{\resumeItemListStart}{\begin{itemize}[rightmargin=0.11in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+% resumeSectionType renders a bolded type to be used under a section, used as skill type here, middle element is used to keep ":"s in the same vertical line
+\newcommand{\resumeSectionType}[3]{
+  \item\begin{tabular*}{0.96\textwidth}[t]{
+    p{0.25\linewidth}p{0.02\linewidth}p{0.73\linewidth}
+  }
+    \textbf{#1} & #2 & #3
+  \end{tabular*}\vspace{-2pt}
+}
+
+% resumeTrioHeading renders three elements in three columns with second element being italicized and first element bolded, can be used for projects with three elements
+\newcommand{\resumeTrioHeading}[3]{
+  \item\small{
+    \begin{tabular*}{0.96\textwidth}[t]{
+      l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r
+    }
+      \textbf{#1} & \textit{#2} & #3
+    \end{tabular*}
+  }
+}
+
+% resumeQuadHeading renders four elements in a two columns with the second row being italicized and first element of first row bolded, can be used for experience and projects with four elements
+\newcommand{\resumeQuadHeading}[4]{
+  \item
+  \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4} \\
+  \end{tabular*}
+}
+
+% resumeQuadHeadingChild renders the second row of resumeQuadHeading, can be used for experience if different roles in the same company need to added
+\newcommand{\resumeQuadHeadingChild}[2]{
+  \item
+  \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{\small#1} & {\small#2} \\
+  \end{tabular*}
+}
+
+% commands to start and end itemization of resumeQuadHeading, lefmargin for left indent of 0.15in for resumeItems
+\newcommand{\resumeHeadingListStart}{
+  \begin{itemize}[leftmargin=0.15in, label={}]
+}
+\newcommand{\resumeHeadingListEnd}{\end{itemize}}
+%-------------------------------------------
+
+
+%__________________RESUME____________________
+% You can rearrange sections in any order you may prefer
+\begin{document}
+
+%-----------CONTACT DETAILS------------------
+% Make sure all the details are correct, you can add more links in the first row of second column if needed
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Huge Mark Kornachuk \vspace{2pt}} & % row = 1, col = 1
+  City: Moscow \\ % row = 1, col = 2
+  \href{https://github.com/PotatoHD404}{\uline{GitHub}} $|$ % row = 2, col = 1
+  Email: \href{mailto:kornachuk.mark@gmail.com}{\uline{kornachuk.mark@gmail.com}} $|$ % row = 2, col = 2
+  Telegram: \href{https://t.me/PotatoHD404}{\uline{@potatohd404}}\\ % row = 2, col = 2
+\end{tabular*}
+%--------------------------------------------
+
+
+%--------------SKILLS------------------------
+% Add or remove resumeSectionTypes according to your needs
+
+\section{Skills}
+  \resumeHeadingListStart{}
+    \resumeSectionType{Languages}{:}{Go, Python}
+    \resumeSectionType{Databases}{:}{PostgreSQL, Redis, ClickHouse, Firebase, DynamoDB}
+    \resumeSectionType{Message Queues}{:}{Kafka, RabbitMQ, SQS}
+    \resumeSectionType{DevOps Tools}{:}{Terraform, Docker, Docker Compose, Kubernetes}  
+    \resumeSectionType{Monitoring}{:}{Grafana, Sage}
+    \resumeSectionType{Clouds}{:}{Yandex Cloud, AWS, OpenStack}
+  \resumeHeadingListEnd{}
+%--------------------------------------------
+
+
+%-----------EXPERIENCE-----------------------
+% Distill all your talking points to small bullet points which follow the pattern "challenge-action-result" for maximum efficiency. Try to quantify (use numbers) your points whenver possible, highlist words of importance
+
+\section{Experience}
+\resumeHeadingListStart{}
+  \resumeQuadHeading{\underline{Software Engineer}}{\underline{Dec 2023 -- Present}}
+  {Tinkoff Bank}{}
+    \resumeItemListStart{}
+      \resumeItem{Developed the backend for a voice robot platform using Python, SQLalchemy, Kafka, PostgreSQL, Redis, and Golang.}
+      \resumeItem{Worked on improving the platform's stability by writing tests and optimizing existing functionality.}
+      \resumeItem{Doubled the speed of running tests.}
+      \resumeItem{Contributed to the development of a feature that reduced the number of requests by 10\%.}
+    \resumeItemListEnd{}
+  \resumeQuadHeading{\underline{Software Engineer}}{\underline{Oct 2023 -- Dec 2023}}
+  {Crypton}{}
+    \resumeItemListStart{}
+      \resumeItem{Developed an API for an online course platform using Django, Celery, Redis, and RabbitMQ.}
+      \resumeItem{Created a contract according to requirements and started its implementation.}
+    \resumeItemListEnd{}
+  \resumeQuadHeading{\underline{Software Engineer Intern}}{\underline{Jun 2023 -- Oct 2023}}
+  {Tinkoff Bank}{}
+    \resumeItemListStart{}
+      \resumeItem{Developed a data processing system using Kafka, Flink, Python, ClickHouse, and FastAPI.}
+      \resumeItem{Created a contract for the interaction between the API and frontend.}
+      \resumeItem{Designed database models.}
+      \resumeItem{Developed a Flink service that read data from Kafka, aggregated it, and wrote it to ClickHouse.}
+      \resumeItem{Participated in the development of the frontend part using Angular, significantly reducing development time.}
+      \resumeItem{As a result of the internship, a service capable of processing 100,000 logs per second was fully implemented and deployed.}
+    \resumeItemListEnd{}
+\resumeHeadingListEnd{}
+%---------------------------------------------
+
+
+%-----------EDUCATION-------------------------
+% Mention your CGPA, if its good, in the first row of second column
+
+\section{Education}
+  \resumeHeadingListStart{}
+    \resumeQuadHeading{National Research Nuclear University "MEPhI"}{Bachelor's}
+    {Software Engineering}{Sep 2020 -- Jul 2024}
+  \resumeHeadingListEnd{}
+%---------------------------------------------
+
+       
+\section{Pet Projects}
+\resumeHeadingListStart{}
+  \resumeTrioHeading{Schedule Bot}{Golang, PostgreSQL, Gin, GORM, Yandex Cloud, SQS}{\href{https://github.com/PotatoHD404/ParallelDB}{\uline{Source code}}}
+  \resumeItemListStart{}
+    \resumeItem{Telegram bot for finding available classrooms at MEPhI}
+    \resumeItem{Designed the system architecture, including interaction contracts between all system components and database models}
+    \resumeItem{Developed a parser to collect data from the \href{https://home.mephi.ru}{home.mephi} portal}
+    \resumeItem{Deployed the project on Yandex Cloud using SQS and Cloud Functions}
+  \resumeItemListEnd{}
+\resumeHeadingListEnd{}
+%--------------------------------------------
+
+\end{document}
